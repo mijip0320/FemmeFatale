@@ -2,7 +2,7 @@ package solve;
 
 import java.util.Arrays;
 
-public class pro_Ä«Ä«¿ÀÇÁ·»ÁîÄÃ·¯¸µºÏ {
+public class pro_ì¹´ì¹´ì˜¤í”„ë Œì¦ˆì»¬ëŸ¬ë§ë¶ {
 
 	public static void main(String[] args) {
 		System.out.println(Arrays.toString(solution(6,4, new int[][]
