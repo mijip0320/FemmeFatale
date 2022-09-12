@@ -23,3 +23,5 @@
 		//뺄셈 먼저 시작
 		back(numbers, idx+1, sum-numbers[idx], target);
 	}
+
+
