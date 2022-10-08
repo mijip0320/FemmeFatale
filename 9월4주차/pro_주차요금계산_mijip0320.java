@@ -1,3 +1,32 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] fees, String[] records) {
+        int lastTime = getMin("23:59");
+        // 현재 파킹 중인 차들
+		Map<String, Integer> parking = new HashMap<>();
+        // 차들의 누적 파킹시간
+		Map<String, Integer> times = new HashMap<>();
+        // 차들 list
+		List<String> cars = new ArrayList<>();
+		
+		for(String record : records) {
+			String[] rc = record.split(" ");
+			int time = getMin(rc[0]);
+			String car = rc[1];
+			
+            // 새로운차 등장
+			if(!cars.contains(car)) {
+				cars.add(car);
+				times.put(car, 0);
+			}
+			
+			if(parking.containsKey(car)) {
+            	// 현재 파킹이 되어 있다면 출차다
+				times.put( car, times.get(car)+(time-parking.get(car)) );
+				parking.remove(car);
+			} else {
+            	// 파킹이 안되어 있다면 입차다.
 				parking.put(car, time);
 			}
 			
